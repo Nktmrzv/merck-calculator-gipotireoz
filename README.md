@@ -18,7 +18,7 @@
 
 ## Пример установки на Tilda
 
-Файлы подключаются с помощью сервиса jsdelivr https://www.jsdelivr.com/github
+Файлы подключаются с помощью сервиса jsDelivr https://www.jsdelivr.com/github
 
 ## Разработка и сборка
 
