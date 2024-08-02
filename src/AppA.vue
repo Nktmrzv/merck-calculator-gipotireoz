@@ -130,6 +130,7 @@ export default
             isAgeError.value = 0 < A1val < 18
             isResult.value = no
             result.value = results().zero
+            # result.value = results(doseGrow * 0.9).C1
 
             # 0 Общие вопросы
             if currentBlock.value is 0
@@ -551,11 +552,11 @@ export default
             window.location.href = '/'
             yes
 
-        onReferences = () ->
-            currentUrl = new URL document.URL
-            currentUrl.hash = '#references'
-            window.location.href = currentUrl.href
-            yes
+        # onReferences = () ->
+        #     currentUrl = new URL document.URL
+        #     currentUrl.hash = '#references'
+        #     window.location.href = currentUrl.href
+        #     yes
 
         onNavigate = (step) ->
             if step < 0
@@ -572,7 +573,7 @@ export default
             blocks
             onResetData
             onGoHome
-            onReferences
+            # onReferences
             onNavigate
             isAgeError
             isOpenResult
@@ -628,9 +629,9 @@ export default
                             <img class="c-result-info-icon" width="23" height="23" src="@/img/i-info.svg">
                             <div v-html="result.info"></div>
                         </div>
-                        <btn class="c-btn-primary" @click="onReferences">
+                        <a class="c-btn c-btn-primary" aria-haspopup="dialog" href="#references">
                             Список литературы
-                        </btn>
+                        </a>
                     </div><!-- v-if -->
                     <div v-else>&nbsp;</div>
                 </div>
