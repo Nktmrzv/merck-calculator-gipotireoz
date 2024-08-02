@@ -19,6 +19,7 @@ export default
 
     setup: (props, context) ->
         currentBlock = ref 0
+        # currentBlock = ref 1
         nextBlock = 1
         blocks = reactive data()
         isAgeError = ref no
@@ -542,7 +543,18 @@ export default
             yes
 
         onResetData = () ->
-            blocks[index] = dataDefault for dataDefault, index in data()
+            window.location.reload()
+            # blocks[index] = dataDefault for dataDefault, index in data()
+            yes
+
+        onGoHome = () ->
+            window.location.href = '/'
+            yes
+
+        onReferences = () ->
+            currentUrl = new URL document.URL
+            currentUrl.hash = '#references'
+            window.location.href = currentUrl.href
             yes
 
         onNavigate = (step) ->
@@ -559,6 +571,8 @@ export default
             currentBlock
             blocks
             onResetData
+            onGoHome
+            onReferences
             onNavigate
             isAgeError
             isOpenResult
@@ -595,12 +609,12 @@ export default
                     <div class="c-result-text" v-html="result.body"></div>
                     <div class="row g-5 mt-lg-35">
                         <div class="col-100 col-md">
-                            <btn class="c-btn-red">
+                            <btn class="c-btn-red" @click="onResetData">
                                 Рассчитать заново
                             </btn>
                         </div><!-- .col -->
                         <div class="col-100 col-md">
-                            <btn class="c-btn-lgray">
+                            <btn class="c-btn-lgray" @click="onGoHome">
                                 На главную
                             </btn>
                         </div><!-- .col -->
@@ -614,7 +628,7 @@ export default
                             <img class="c-result-info-icon" width="23" height="23" src="@/img/i-info.svg">
                             <div v-html="result.info"></div>
                         </div>
-                        <btn class="c-btn-primary">
+                        <btn class="c-btn-primary" @click="onReferences">
                             Список литературы
                         </btn>
                     </div><!-- v-if -->

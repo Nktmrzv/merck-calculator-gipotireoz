@@ -311,7 +311,12 @@ export default
             yes
 
         onResetData = () ->
+            window.location.reload()
             # blocks[index] = dataDefault for dataDefault, index in data()
+            yes
+
+        onGoHome = () ->
+            window.location.href = '/'
             yes
 
         onNavigate = (step) ->
@@ -345,6 +350,7 @@ export default
             currentBlock
             blocks
             onResetData
+            onGoHome
             onNavigate
             isAgeError
             isOpenResult
@@ -391,12 +397,12 @@ export default
                     <div class="c-result-text" v-html="result.body"></div>
                     <div class="row g-5 mt-lg-35">
                         <div class="col-100 col-md">
-                            <btn class="c-btn-red">
+                            <btn class="c-btn-red" @click="onResetData">
                                 Рассчитать заново
                             </btn>
                         </div><!-- .col -->
                         <div class="col-100 col-md">
-                            <btn class="c-btn-lgray">
+                            <btn class="c-btn-lgray" @click="onGoHome">
                                 На главную
                             </btn>
                         </div><!-- .col -->
