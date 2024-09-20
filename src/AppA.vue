@@ -604,7 +604,7 @@ export default
             <div class="col-100 col-lg">
                 <div class="c-result-body maxw-lg-5">
                     <div class="c-result-label">
-                        Заключение
+                        Результат расчета
                     </div>
                     <div class="c-result-title" v-html="result.title"></div>
                     <div class="c-result-text" v-html="result.body"></div>
