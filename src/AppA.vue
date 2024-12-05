@@ -1,6 +1,6 @@
 <script lang="coffee">
 
-import { reactive, watch, ref, computed } from 'vue'
+import { reactive, watch, ref, computed, onMounted } from 'vue'
 import Block from '@/components/Block.vue'
 import Btn from '@/components/Btn.vue'
 import ModalResult from '@/components/Modal.vue'
@@ -27,6 +27,11 @@ export default
         isResult = ref no
         result = ref {}
         doseGrow = 0
+
+        # onMounted ->
+        #     result.value = results().UUU5
+        #     isOpenResult.value = yes
+        #     yes
 
         watchFields = ->
             {
@@ -114,6 +119,7 @@ export default
         }
 
         calculate = () ->
+            # return yes
             {
                 A1, B1, C1, D1, E1, F1, G1, H1
                 A2, B2, C2, D2, E2, F2, G2, H2, I2, J2, K2
