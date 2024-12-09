@@ -418,6 +418,9 @@ export default
                         </div>
                     </div><!-- v-if -->
                     <div v-else>&nbsp;</div>
+                    <a class="c-btn c-btn-primary" aria-haspopup="dialog" href="#references">
+                        Список литературы
+                    </a>
                 </div>
             </div><!-- .col -->
         </div><!-- .row -->

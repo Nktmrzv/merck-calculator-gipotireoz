@@ -635,11 +635,11 @@ export default
                             <img class="c-result-info-icon" width="23" height="23" src="@/img/i-info.svg">
                             <div v-html="result.info"></div>
                         </div>
-                        <a class="c-btn c-btn-primary" aria-haspopup="dialog" href="#references">
-                            Список литературы
-                        </a>
                     </div><!-- v-if -->
                     <div v-else>&nbsp;</div>
+                    <a class="c-btn c-btn-primary" aria-haspopup="dialog" href="#references">
+                        Список литературы
+                    </a>
                 </div>
             </div><!-- .col -->
         </div><!-- .row -->
